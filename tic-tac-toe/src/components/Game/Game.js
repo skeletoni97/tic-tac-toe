@@ -12,7 +12,10 @@ function Game() {
       ]);
       
     function handleClick(en, ne) {
+        if(board[en][ne] !== '')return
+
         const newBoard = [...board];
+
         if (!move) {
             newBoard[en][ne] = 'x';
             setMove(true)
