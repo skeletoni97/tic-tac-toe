@@ -1,0 +1,56 @@
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .cell {
+    border: 1px solid black;
+    height: 48px;
+    padding: 8px;
+    position: relative;
+    vertical-align: top;
+    width: 48px;
+  }
+  .zero {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+  }
+  .zero__none {
+    display: none;
+  }
+  .cross {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+  }
+  .cross__none {
+    display: none;
+  }
+  .resetBoard {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #008000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .resetBoard:hover {
+    background-color: #006400;
+  }
