@@ -54,15 +54,3 @@
   .resetBoard:hover {
     background-color: #006400;
   }
-  .winner-messag {
-    visibility: hidden;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .winner-message_visible {
-    display: block;
-    visibility: visible;
-  }
