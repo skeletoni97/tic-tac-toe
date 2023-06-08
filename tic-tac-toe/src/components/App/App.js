@@ -1,9 +1,8 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PAGES } from "../../utils/Pages/pages"
 const App = () => {
-
   return (
     <BrowserRouter>
       <div className="app">

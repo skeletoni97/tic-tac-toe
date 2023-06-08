@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Game.css";
 import GameBoard from "../GameBoard/GameBoard";
+import WinnerMessage from "../WinnerMessage/WinnerMessage";
 import ResetButton from "../ResetButton/ResetButton";
 import { DEFAULT_BOARD } from "../../utils/constants/constants";
 
@@ -13,12 +14,10 @@ function Game() {
     setCurrentPlayer(false);
     setWinner(null);
   }
-console.log(winner)
+  console.log(winner);
   return (
     <div className="game">
-        <div className={`winner-messag ${winner === null ? "" : "winner-message_visible"}`}>
-          Победитель: {winner === "1" ? "Крестик" : "Нолик"}
-        </div>
+      <WinnerMessage winner={winner} />
       <ResetButton handleResetBoard={handleResetBoard} />
       <GameBoard
         board={board}

@@ -1,0 +1,13 @@
+.resetBoard {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #008000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .resetBoard:hover {
+    background-color: #006400;
+  }
