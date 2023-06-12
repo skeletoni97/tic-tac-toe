@@ -11,8 +11,8 @@ interface CellProps {
 function Cell({ handleClick, cell }: CellProps) {
   return (
     <div className={style.cell} onClick={handleClick}>
-      {cell === "x" ? <img className={style.cross} src={cross} alt="крестик" /> : null}
-      {cell === "o" ? <img className={style.zoro} src={zero} alt="нолик" /> : null}
+      {cell === "x" ? <img className={style.cross} src={cross} alt="крестик" /> : <></>}
+      {cell === "o" ? <img className={style.zero} src={zero} alt="нолик" /> : <></>}
     </div>
   );
 }
