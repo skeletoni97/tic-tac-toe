@@ -1,4 +1,4 @@
-.welcome-screen {
+.welcomeScreen {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,13 +6,13 @@
     height: 100vh;
   }
   
-  .welcome-title {
+  .welcomeTitle {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
   }
   
-  .start-button {
+  .startButton {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #008000;
@@ -22,6 +22,6 @@
     cursor: pointer;
   }
   
-  .start-button:hover {
+  .startButton:hover {
     background-color: #006400;
   }

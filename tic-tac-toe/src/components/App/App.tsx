@@ -1,17 +1,16 @@
-import "./App.css";
+import style from "./App.module.css";
 import React from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { PAGES } from "../../utils/Pages/pages"
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="app">
+      <div className={style.app}>
         <Routes>
-        {PAGES.map((page, index) => (
+        {PAGES.map((page) => (
             <Route
-              key={index}
               path={page.path}
-              element={<page.component/>}
+              element={<page.component />}
               />
           ))} </Routes>
       </div>

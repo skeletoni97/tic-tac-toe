@@ -1,6 +1,14 @@
 import React from "react";
-import "./GameBoard.css";
+import style from "./GameBoard.module.css";
 import Cell from "../Cell/Cell"
+
+interface GameBoardProps {
+  currentPlayer: boolean;
+  setCurrentPlayer: React.Dispatch<React.SetStateAction<boolean>>;
+  board: string[][];
+  setWinner: React.Dispatch<React.SetStateAction<string | null>>;
+  winner: string | null;
+};
 
 function GameBoard({
   currentPlayer,
@@ -8,9 +16,10 @@ function GameBoard({
   board,
   setWinner,
   winner,
-}) {
-  function checkWinner(board) {
-    const winningPositions = [
+}: GameBoardProps) {
+
+  function checkWinner(board: string[][]) {
+    const winningPositions: string[][] = [
       [board[0][0], board[0][1], board[0][2]],
       [board[1][0], board[1][1], board[1][2]],
       [board[2][0], board[2][1], board[2][2]],
@@ -31,7 +40,7 @@ function GameBoard({
     return null;
   }
 
-  function handleClick(rowIndex, colIndex) {
+  function handleClick(rowIndex: number, colIndex: number) {
     console.log(rowIndex,colIndex)
     if (board[rowIndex][colIndex] !== "" || winner !== null) return;
 
@@ -48,11 +57,11 @@ function GameBoard({
     setWinner(result);
     return newBoard;
   }
-console.log(board)
+
   return (
-    <div className="game-board">
+    <div className={style.gameBoard}>
       {board.map((row, rowIndex) => (
-        <div className="row" key={rowIndex}>
+        <div className={style.row} key={rowIndex}>
           {row.map((cell, colIndex) => (
             <Cell 
                 key={colIndex}
