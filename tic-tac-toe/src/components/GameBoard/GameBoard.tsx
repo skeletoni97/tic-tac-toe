@@ -5,7 +5,7 @@ import Cell from "../Cell/Cell"
 interface GameBoardProps {
   currentPlayer: string;
   setCurrentPlayer: (value: string) => void;
-  board: Array<Array<string>>;
+  board: Array<Array<"x" | "o" | "">>;
   setWinner:(value: string | null) => void;
   winner: string | null;
 };
@@ -18,8 +18,8 @@ function GameBoard({
   winner,
 }: GameBoardProps) {
 
-  function checkWinner(board: Array<Array<string>>) {
-    const winningPositions: Array<Array<string>> = [
+  function checkWinner(board: Array<Array<"x" | "o" | "">>) {
+    const winningPositions: Array<Array<"x" | "o" | "">> = [
       [board[0][0], board[0][1], board[0][2]],
       [board[1][0], board[1][1], board[1][2]],
       [board[2][0], board[2][1], board[2][2]],
