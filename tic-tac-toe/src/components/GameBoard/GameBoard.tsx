@@ -3,10 +3,10 @@ import style from "./GameBoard.module.css";
 import Cell from "../Cell/Cell"
 
 interface GameBoardProps {
-  currentPlayer: boolean;
-  setCurrentPlayer: React.Dispatch<React.SetStateAction<boolean>>;
-  board: string[][];
-  setWinner: React.Dispatch<React.SetStateAction<string | null>>;
+  currentPlayer: string;
+  setCurrentPlayer: (value: string) => void;
+  board: Array<Array<string>>;
+  setWinner:(value: string | null) => void;
   winner: string | null;
 };
 
@@ -18,8 +18,8 @@ function GameBoard({
   winner,
 }: GameBoardProps) {
 
-  function checkWinner(board: string[][]) {
-    const winningPositions: string[][] = [
+  function checkWinner(board: Array<Array<string>>) {
+    const winningPositions: Array<Array<string>> = [
       [board[0][0], board[0][1], board[0][2]],
       [board[1][0], board[1][1], board[1][2]],
       [board[2][0], board[2][1], board[2][2]],
@@ -41,17 +41,14 @@ function GameBoard({
   }
 
   function handleClick(rowIndex: number, colIndex: number) {
-    console.log(rowIndex,colIndex)
-    if (board[rowIndex][colIndex] !== "" || winner !== null) return;
-
+    if (board[rowIndex][colIndex] || winner !== null) return;
     const newBoard = [...board];
-
-    if (!currentPlayer) {
+    if (currentPlayer === "x") {
       newBoard[rowIndex][colIndex] = "x";
-      setCurrentPlayer(true);
+      setCurrentPlayer("o");
     } else {
       newBoard[rowIndex][colIndex] = "o";
-      setCurrentPlayer(false);
+      setCurrentPlayer("x");
     }
     const result = checkWinner(newBoard);
     setWinner(result);

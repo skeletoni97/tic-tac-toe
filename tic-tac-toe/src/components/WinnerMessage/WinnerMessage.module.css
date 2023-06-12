@@ -1,12 +1,9 @@
 .winnerMessage {
-    visibility: hidden;
+    
     font-size: 24px;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
   }
   
-  .winnerMessage_visible {
-    display: block;
-    visibility: visible;
-  }
+  

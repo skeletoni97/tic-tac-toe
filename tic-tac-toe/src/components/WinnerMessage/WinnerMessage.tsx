@@ -5,11 +5,11 @@ interface WinnerMessageProps {
 }
 
 function WinnerMessage({ winner }: WinnerMessageProps) {
-    return (
-        <div className={ winner ? `${styles.winnerMessage} ${styles.winnerMessage_visible}` : styles.winnerMessage }>
-        Победитель: {winner === "x" ? "Крестик" : "Нолик"}
-      </div>
-    );
+  return winner ? (
+    <div className={styles.winnerMessage}>
+      Победитель: {winner === "x" ? "Крестик" : "Нолик"}
+    </div>
+  ) : <></>;
   }
   
 export default WinnerMessage;

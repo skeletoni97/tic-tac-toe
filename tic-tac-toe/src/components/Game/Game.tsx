@@ -6,13 +6,13 @@ import ResetButton from "../ResetButton/ResetButton";
 import { DEFAULT_BOARD } from "../../utils/constants/constants";
 
 function Game() {
-  const [currentPlayer, setCurrentPlayer] = useState(false);
+  const [currentPlayer, setCurrentPlayer] = useState("x");
   const [board, setBoard] = useState(JSON.parse(JSON.stringify(DEFAULT_BOARD)));
   const [winner, setWinner] = useState<string | null>(null);
   function handleResetBoard() {
     setBoard(JSON.parse(JSON.stringify(DEFAULT_BOARD)));
-    setCurrentPlayer(false);
-    setWinner((prevWinner) => null);
+    setCurrentPlayer("x");
+    setWinner(null);
   }
  
   return (
